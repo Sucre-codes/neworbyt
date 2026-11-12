@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f4f5f2; --surface: #ffffff; --ink: #14181f; --muted: #566070;
+  --line: #dcdfd8; --accent: #8a6414; --accent-ink: #ffffff;
+}
+.dark {
+  --bg: #0d1015; --surface: #141922; --ink: #f3efe3; --muted: #9aa3b2;
+  --line: #232a36; --accent: #e4c978; --accent-ink: #0d1015;
+}
+
+@theme inline {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); transition: background-color .25s, color .25s; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+:root { --gold-a: #b8860b; --gold-b: #7a5a10; }
+.dark { --gold-a: #f0d77f; --gold-b: #c9a24a; }
+.gold-text { background: linear-gradient(100deg, var(--gold-a), var(--gold-b)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.card-glow { background: radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 55%), var(--surface); }
