@@ -1,4 +1,4 @@
-const BASE = import.meta.env.VITE_API_URL ?? "http://localhost:4000/api";
+const BASE = "https://neworbyt.onrender.com/api/";
 
 // If a route name differs in your backend, change it here and nowhere else.
 export const ENDPOINTS = {
